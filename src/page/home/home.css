@@ -1,0 +1,23 @@
+.home-page-container {
+  /* border: 1px solid red; */
+}
+
+.home-body {
+  /* border: 1px solid blue; */
+}
+
+.home-sider {
+  /* border: 1px solid cyan; */
+  background-color: #26344b !important;
+  height: 93vh;
+}
+
+.home-content {
+  /* border: 1px solid pink; */
+}
+
+.home-sider .ant-menu-item-selected {
+  background-color: #233f6b !important;
+
+  /* #011529 */
+}

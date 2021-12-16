@@ -1,0 +1,44 @@
+.home-header {
+  display: flex;
+  background-color: white;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  height: 7vh;
+  z-index: 99;
+}
+
+.home-header-logo {
+  background-color: #008176;
+  width: 12%;
+  min-width: 210px;
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 75px;
+}
+
+.home-header-right {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.home-header-title {
+  font-size: 1.6rem;
+}
+
+.home-header-dropdown-span {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ant-dropdown-menu {
+  transform: translate(10px, -10px);
+}
