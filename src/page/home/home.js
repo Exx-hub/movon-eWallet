@@ -74,6 +74,7 @@ function Home() {
             </Menu>
           </Sider>
 
+          {/* NESTED ROUTES - HOME CONTENT BODY  */}
           <Layout className="home-content">
             <Content>
               <Switch>

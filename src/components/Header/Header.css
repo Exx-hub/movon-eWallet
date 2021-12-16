@@ -19,7 +19,8 @@
 }
 
 .header-logo {
-  height: 75px;
+  height: 76px;
+  transform: translateY(-4px);
 }
 
 .home-header-right {

@@ -16,6 +16,17 @@ function Login() {
 
   const history = useHistory();
 
+  React.useEffect(() => {
+    if (UserProfile.getCredential()) {
+      history.push("/");
+
+      // onFinish, userid and pass will be sent to server and if correct credentials, server will return data with the response.
+      // user data and token will be saved in localstorate with key "credential". then state will be changed to loading false,
+      // that state change will trigger this userEffect, checking if there is value for credential, will change url to "/"
+      // window.location.replace("/");
+    }
+  }, [UserProfile]);
+
   const onFinish = () => {
     setIsLoading(true);
 
