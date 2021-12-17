@@ -1,9 +1,8 @@
 import React from "react";
 import "./Header.css";
-import { Button, Menu, Dropdown, Layout, Image } from "antd";
+import { Menu, Dropdown, Layout, Image } from "antd";
 import {
   DownOutlined,
-  UserOutlined,
   InfoCircleOutlined,
   PoweroffOutlined,
 } from "@ant-design/icons";
@@ -30,14 +29,14 @@ function _Header(props) {
       name: "Change Password",
       type: "menu",
       icon: () => <InfoCircleOutlined />,
-      //   action: () => props.setChangePassVisible(),
+      action: () => props.setChangePassVisible(),
     },
     {
       key: "drop-down-logout",
       name: "Logout",
       type: "menu",
       icon: () => <PoweroffOutlined />,
-      //   action: () => props.setLogOutVisible(),
+      action: () => props.setLogOutVisible(),
     },
   ];
 

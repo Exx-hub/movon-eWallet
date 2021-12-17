@@ -13,7 +13,7 @@ import { UserProfile } from "./utility";
 function AppNavigator() {
   const ProtectedRoute = (params) => {
     return UserProfile.getCredential() ? (
-      <Route {...params} render={() => <params.component />} />
+      <Route {...params} component={params.component} />
     ) : (
       <Redirect to="/login" />
     );

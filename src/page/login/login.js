@@ -25,7 +25,7 @@ function Login() {
       // that state change will trigger this userEffect, checking if there is value for credential, will change url to "/"
       // window.location.replace("/");
     }
-  }, [UserProfile]);
+  }, [history]);
 
   const onFinish = () => {
     setIsLoading(true);

@@ -12,10 +12,14 @@ import UserAdministration from "../userAdministration";
 import TransactionsList from "../transactionsList";
 import WalletConfig from "../walletConfig";
 
+import { ChangePasswordModal, LogOutModal } from "../../components/modal";
+
 const { Content, Sider } = Layout;
 
 function Home() {
   const [headerTitle, setHeaderTitle] = useState("");
+  const [changePassVisible, setChangePassVisible] = useState(false);
+  const [logOutVisible, setLogOutVisible] = useState(false);
 
   const history = useHistory();
 
@@ -36,8 +40,8 @@ function Home() {
     <>
       <Layout className="home-page-container">
         <Header
-          // setChangePassVisible={() => setChangePassVisible(true)}
-          // setLogOutVisible={() => setLogOutVisible(true)}
+          setChangePassVisible={() => setChangePassVisible(true)}
+          setLogOutVisible={() => setLogOutVisible(true)}
           headerTitle={headerTitle}
         />
         <Layout className="home-body">
@@ -100,18 +104,18 @@ function Home() {
           </Layout>
         </Layout>
 
-        {/* <ChangePassModal
+        <ChangePasswordModal
           visible={changePassVisible}
           handleCancel={() => setChangePassVisible(false)}
           handleOk={() => setChangePassVisible(false)}
-        /> */}
+        />
 
-        {/* <LogOutModal
+        <LogOutModal
           visible={logOutVisible}
           handleCancel={() => setLogOutVisible(false)}
           handleOk={() => setLogOutVisible(false)}
           history={history}
-        /> */}
+        />
       </Layout>
     </>
   );
