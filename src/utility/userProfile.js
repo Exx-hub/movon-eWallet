@@ -9,7 +9,7 @@ class UserProfileClass {
       this.credential = JSON.parse(localStorage.getItem("credential"));
 
       this.token = this.credential.token;
-      this.user = this.credential.username;
+      this.user = this.credential.user;
     }
   }
 
@@ -19,7 +19,7 @@ class UserProfileClass {
       if (localStorage.getItem("credential")) {
         this.credential = JSON.parse(localStorage.getItem("credential"));
         this.token = this.credential.token;
-        this.user = this.credential.username;
+        this.user = this.credential.user;
       }
     }
   }

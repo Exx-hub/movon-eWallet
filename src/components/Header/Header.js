@@ -8,6 +8,8 @@ import {
 } from "@ant-design/icons";
 import { useHistory } from "react-router";
 import movonLogo from "../../assets/images/movonLogo.png";
+
+import { UserProfile } from "../../utility";
 const { Header } = Layout;
 
 function _Header(props) {
@@ -76,7 +78,7 @@ function _Header(props) {
 
         <Dropdown overlay={menu} trigger={["click"]}>
           <span className="home-header-dropdown-span">
-            E-Wallet{" "}
+            Welcome, {UserProfile.getUser()}!
             <DownOutlined style={{ fontSize: "10px", marginLeft: 5 }} />
           </span>
         </Dropdown>

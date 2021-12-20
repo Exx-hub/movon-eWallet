@@ -9,7 +9,7 @@ export const config = {
     build: "1.0.0(1)",
   },
   environment: "",
-  changeLogs: `feature/update-password-logout-modals/build1`,
+  changeLogs: `page/transaction-summary/build2`,
 };
 
 export const ERROR_CODES = {
