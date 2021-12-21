@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./transactionSummary.css";
 import { DatePicker, Button, Table } from "antd";
 
@@ -61,7 +61,7 @@ const dataSource = [
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
     transactionDate: "December 20, 2021",
-    key: 1,
+    key: 2,
   },
   {
     transId: "MOV12346",
@@ -69,14 +69,19 @@ const dataSource = [
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
     transactionDate: "December 20, 2021",
-    key: 1,
+    key: 3,
   },
 ];
 
 function TransactionSummary() {
+  // const [pageSize, setPageSize] = useState(10);
+
+  // const change = () => {
+  //   if (pageSize === 10) setPageSize(5);
+  //   if (pageSize === 5) setPageSize(10);
+  // };
   return (
     <div className="transaction-summary-container">
-      {/* user details  */}
       <div className="user-details-container">
         <div>
           <span className="title">Client Name:</span>{" "}
@@ -112,7 +117,7 @@ function TransactionSummary() {
             // loading={this.state.fetching}
             scroll={{ y: 500 }}
             rowKey="key"
-            pagination={{ position: ["bottomCenter"], pageSize: 10 }}
+            pagination={{ position: ["bottomCenter"], pageSize: 10 }} // pageSize set dropdown
             // pagination={false}
             columns={tableSource}
             dataSource={dataSource}
