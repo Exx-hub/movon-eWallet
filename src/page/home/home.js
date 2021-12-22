@@ -11,6 +11,7 @@ import TransactionSummary from "../transactionSummary";
 import UserAdministration from "../userAdministration";
 import TransactionsList from "../transactionsList";
 import WalletConfig from "../walletConfig";
+import ViewTransaction from "../viewTransaction";
 
 import { ChangePasswordModal, LogOutModal } from "../../components/modal";
 
@@ -27,14 +28,20 @@ function Home() {
 
   const { pathname } = location;
 
-  // console.log(pathname);
+  console.log(headerTitle);
 
   useEffect(() => {
-    if (pathname === "/transaction-summary")
+    if (pathname === "/transaction-summary") {
       setHeaderTitle("Transaction Summary");
-    if (pathname === "/transactions") setHeaderTitle("Transactions List");
-    if (pathname === "/user-admin") setHeaderTitle("User Administration");
-    if (pathname === "/wallet-config") setHeaderTitle("Wallet Configuration");
+    } else if (pathname === "/transactions") {
+      setHeaderTitle("Transactions List");
+    } else if (pathname === "/user-admin") {
+      setHeaderTitle("User Administration");
+    } else if (pathname === "/wallet-config") {
+      setHeaderTitle("Wallet Configuration");
+    } else {
+      setHeaderTitle("");
+    }
   }, [pathname]);
   return (
     <>
@@ -86,7 +93,7 @@ function Home() {
                   <TransactionSummary />
                 </Route>
 
-                <Route path="/transactions">
+                <Route exact path="/transactions">
                   <TransactionsList />
                 </Route>
 
@@ -96,6 +103,10 @@ function Home() {
 
                 <Route path="/wallet-config">
                   <WalletConfig />
+                </Route>
+
+                <Route path="/transactions/:id">
+                  <ViewTransaction />
                 </Route>
 
                 <Redirect from="/" to="/transaction-summary" />

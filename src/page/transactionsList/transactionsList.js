@@ -3,128 +3,14 @@ import "./transactionsList.css";
 
 import { Dropdown, Input, Table, Menu, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
+import { useHistory } from "react-router-dom";
 
 const { Search } = Input;
 
-const tableSource = [
-  {
-    title: "Reference ID",
-    dataIndex: "referenceId",
-    key: "referenceId",
-    align: "center",
-  },
-  {
-    title: "Ticket ID",
-    dataIndex: "ticketId",
-    key: "ticketId",
-    align: "center",
-  },
-  {
-    title: "Ticket Price",
-    dataIndex: "ticketPrice",
-    key: "ticketPrice",
-    align: "center",
-  },
-  {
-    title: "Convenience Fee",
-    dataIndex: "convenienceFee",
-    key: "convenienceFee",
-    align: "center",
-  },
-  {
-    title: "Trip Date",
-    dataIndex: "tripDate",
-    key: "tripDate",
-    align: "center",
-  },
-  {
-    title: "Merchant",
-    dataIndex: "merchant",
-    key: "merchant",
-    align: "center",
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
-    key: "status",
-    align: "center",
-  },
-  {
-    title: "Transaction Date",
-    dataIndex: "transactionDate",
-    key: "transactionDate",
-    align: "center",
-  },
-
-  {
-    title: "Details",
-    key: "details",
-    align: "center",
-    render: (item) => <Button onClick={() => console.log(item)}>View</Button>,
-  },
-];
-
-// hardcoded for now but this should come from backend fetched data
-const dataSource = [
-  {
-    referenceId: "BC12345",
-    ticketId: "T-13hiuefgfdg",
-    ticketPrice: "845.00",
-    convenienceFee: "50.00",
-    tripDate: "December 20, 2021",
-    merchant: "DLTB",
-    status: "Pending",
-    transactionDate: "December 15,2021",
-    key: 0,
-  },
-  {
-    referenceId: "BC12345",
-    ticketId: "T-13hiuefgfdg",
-    ticketPrice: "845.00",
-    convenienceFee: "50.00",
-    tripDate: "December 20, 2021",
-    merchant: "DLTB",
-    status: "Pending",
-    transactionDate: "December 15,2021",
-    key: 1,
-  },
-  {
-    referenceId: "BC12345",
-    ticketId: "T-13hiuefgfdg",
-    ticketPrice: "845.00",
-    convenienceFee: "50.00",
-    tripDate: "December 20, 2021",
-    merchant: "DLTB",
-    status: "Pending",
-    transactionDate: "December 15,2021",
-    key: 2,
-  },
-  {
-    referenceId: "BC12345",
-    ticketId: "T-13hiuefgfdg",
-    ticketPrice: "845.00",
-    convenienceFee: "50.00",
-    tripDate: "December 20, 2021",
-    merchant: "DLTB",
-    status: "Pending",
-    transactionDate: "December 15,2021",
-    key: 3,
-  },
-  {
-    referenceId: "BC12345",
-    ticketId: "T-13hiuefgfdg",
-    ticketPrice: "845.00",
-    convenienceFee: "50.00",
-    tripDate: "December 20, 2021",
-    merchant: "DLTB",
-    status: "Pending",
-    transactionDate: "December 15,2021",
-    key: 4,
-  },
-];
-
 function TransactionsList() {
   const [pageSize, setPageSize] = useState(5);
+
+  const history = useHistory();
 
   const menu = (
     <Menu>
@@ -139,6 +25,139 @@ function TransactionsList() {
       </Menu.Item>
     </Menu>
   );
+
+  const tableSource = [
+    {
+      title: "Reference ID",
+      dataIndex: "referenceId",
+      key: "referenceId",
+      align: "center",
+    },
+    {
+      title: "Ticket ID",
+      dataIndex: "ticketId",
+      key: "ticketId",
+      align: "center",
+    },
+    {
+      title: "Ticket Price",
+      dataIndex: "ticketPrice",
+      key: "ticketPrice",
+      align: "center",
+    },
+    {
+      title: "Convenience Fee",
+      dataIndex: "convenienceFee",
+      key: "convenienceFee",
+      align: "center",
+    },
+    {
+      title: "Trip Date",
+      dataIndex: "tripDate",
+      key: "tripDate",
+      align: "center",
+    },
+    {
+      title: "Merchant",
+      dataIndex: "merchant",
+      key: "merchant",
+      align: "center",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
+      align: "center",
+    },
+    {
+      title: "Transaction Date",
+      dataIndex: "transactionDate",
+      key: "transactionDate",
+      align: "center",
+    },
+
+    {
+      title: "Details",
+      key: "details",
+      align: "center",
+      render: (item) => (
+        <Button
+          onClick={() =>
+            history.push({
+              pathname: `/transactions/${item._id}`,
+              state: { item },
+            })
+          }
+        >
+          View
+        </Button>
+      ),
+    },
+  ];
+
+  // hardcoded for now but this should come from backend fetched data saved in component state
+  const dataSource = [
+    {
+      referenceId: "BC12345",
+      ticketId: "T-13hiuefgfdg",
+      ticketPrice: "845.00",
+      convenienceFee: "50.00",
+      tripDate: "December 20, 2021",
+      merchant: "DLTB",
+      status: "Pending",
+      transactionDate: "December 15,2021",
+      key: 0,
+      _id: 1,
+    },
+    {
+      referenceId: "ZZ44445",
+      ticketId: "T-14tyahaehe",
+      ticketPrice: "1245.00",
+      convenienceFee: "50.00",
+      tripDate: "November 29, 2021",
+      merchant: "BITSI",
+      status: "Success",
+      transactionDate: "November 16,2021",
+      key: 1,
+      _id: 2,
+    },
+    {
+      referenceId: "AA12345",
+      ticketId: "T-11uyahahe",
+      ticketPrice: "1000.00",
+      convenienceFee: "50.00",
+      tripDate: "December 25, 2021",
+      merchant: "DLTB",
+      status: "Pending",
+      transactionDate: "December 15,2021",
+      key: 2,
+      _id: 3,
+    },
+    {
+      referenceId: "FN43432",
+      ticketId: "T-01gheheheh",
+      ticketPrice: "550.00",
+      convenienceFee: "50.00",
+      tripDate: "December 31, 2021",
+      merchant: "DLTB",
+      status: "Pending",
+      transactionDate: "December 22,2021",
+      key: 3,
+      _id: 4,
+    },
+    {
+      referenceId: "VB54343",
+      ticketId: "T-13refgertgt",
+      ticketPrice: "1500.00",
+      convenienceFee: "100.00",
+      tripDate: "December 31, 2021",
+      merchant: "VLI",
+      status: "Pending",
+      transactionDate: "December 23,2021",
+      key: 4,
+      _id: 5,
+    },
+  ];
 
   return (
     <div className="transactionList-container">

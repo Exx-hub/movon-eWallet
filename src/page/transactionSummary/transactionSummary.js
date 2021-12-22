@@ -37,7 +37,7 @@ const tableSource = [
   },
 ];
 
-// hardcoded for now but this should come from backend fetched data
+// hardcoded for now but this should come from backend fetched data saved in component state
 const dataSource = [
   {
     transId: "MOV12345",

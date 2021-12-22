@@ -5,6 +5,7 @@ import {
   DownOutlined,
   InfoCircleOutlined,
   PoweroffOutlined,
+  LeftOutlined,
 } from "@ant-design/icons";
 import { useHistory } from "react-router";
 import movonLogo from "../../assets/images/movonLogo.png";
@@ -74,7 +75,14 @@ function _Header(props) {
         <Image preview={false} className="header-logo" src={movonLogo} alt="" />
       </div>
       <div className="home-header-right">
-        <div className="home-header-title">{props.headerTitle}</div>
+        {props.headerTitle ? (
+          <div className="home-header-title">{props.headerTitle}</div>
+        ) : (
+          <div className="home-header-title">
+            {" "}
+            <LeftOutlined onClick={() => history.push("/transactions")} /> Back
+          </div>
+        )}
 
         <Dropdown overlay={menu} trigger={["click"]}>
           <span className="home-header-dropdown-span">
