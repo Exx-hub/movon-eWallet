@@ -75,7 +75,6 @@ function TransactionsList() {
       key: "transactionDate",
       align: "center",
     },
-
     {
       title: "Details",
       key: "details",

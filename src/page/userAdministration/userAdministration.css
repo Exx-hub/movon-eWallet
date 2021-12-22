@@ -1,0 +1,45 @@
+.user-admin-container {
+  padding: 25px;
+}
+
+.user-admin-title-div {
+  padding: 10px 0;
+}
+
+.title-key {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: 200;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  margin-right: 3px;
+}
+
+.title-value {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.user-admin-middle-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.user-admin-table-container {
+  margin-top: 10px;
+}
+
+.user-admin-table-container th {
+  background-color: rgba(46, 49, 49, 0.15) !important;
+  color: #333 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
