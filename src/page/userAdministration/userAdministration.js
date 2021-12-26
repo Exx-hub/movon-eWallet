@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./userAdministration.css";
 
 import { Dropdown, Input, Table, Menu, Button } from "antd";
 import { DownOutlined, PlusOutlined, EditOutlined } from "@ant-design/icons";
+import { AddUserModal, EditUserModal } from "../../components/modal";
 
 const tableSource = [
   {
@@ -90,6 +91,9 @@ const dataSource = [
 ];
 
 function UserAdministration() {
+  const [addNewUserModalVisible, setAddNewUserModalVisible] = useState(false);
+  const [editUserModalVisible, setEditUserModalVisible] = useState(false);
+
   const menu = (
     <Menu>
       <Menu.Item key="1">5</Menu.Item>
@@ -97,36 +101,48 @@ function UserAdministration() {
       <Menu.Item key="3">15</Menu.Item>
     </Menu>
   );
+
+  const merchantList = ["DLTB Co.", "BITSI", "Victory Liner", "Ceres"];
   return (
-    <div className="user-admin-container">
-      <div className="user-admin-title-div">
-        <span className="title-key">Merchant: </span>
-        <span className="title-value">DLTB Co.</span>
-      </div>
-      <div className="user-admin-middle-div">
-        <Dropdown overlay={menu}>
-          <Button>
-            5 <DownOutlined />
+    <>
+      <div className="user-admin-container">
+        <div className="user-admin-title-div">
+          <span className="title-key">Merchant: </span>
+          <span className="title-value">DLTB Co.</span>
+        </div>
+        <div className="user-admin-middle-div">
+          <Dropdown overlay={menu}>
+            <Button>
+              5 <DownOutlined />
+            </Button>
+          </Dropdown>
+          <Button onClick={() => setAddNewUserModalVisible(true)}>
+            <PlusOutlined /> Add New User
           </Button>
-        </Dropdown>
-        <Button>
-          <PlusOutlined /> Add New User
-        </Button>
+        </div>
+
+        <div className="user-admin-table-container">
+          <Table
+            // loading={this.state.fetching}
+            // scroll={{ y: 700 }}
+            rowKey="key"
+            pagination={{ position: ["bottomCenter"], pageSize: 10 }} // pageSize set dropdown
+            // pagination={false}
+            columns={tableSource}
+            dataSource={dataSource}
+            // to use pagination from ant D, default table pagination not ideal
+          />
+        </div>
       </div>
 
-      <div className="user-admin-table-container">
-        <Table
-          // loading={this.state.fetching}
-          // scroll={{ y: 700 }}
-          rowKey="key"
-          pagination={{ position: ["bottomCenter"], pageSize: 10 }} // pageSize set dropdown
-          // pagination={false}
-          columns={tableSource}
-          dataSource={dataSource}
-          // to use pagination from ant D, default table pagination not ideal
-        />
-      </div>
-    </div>
+      <AddUserModal
+        visible={addNewUserModalVisible}
+        merchantList={merchantList}
+        handleCancel={() => setAddNewUserModalVisible(false)}
+        handleOk={() => setAddNewUserModalVisible(false)}
+      />
+      <EditUserModal visible={editUserModalVisible} />
+    </>
   );
 }
 
