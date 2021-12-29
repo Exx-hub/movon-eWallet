@@ -9,7 +9,7 @@ export const config = {
     build: "1.0.0(3)",
   },
   environment: "",
-  changeLogs: `page/user-admin/build3`,
+  changeLogs: `modal/add-edit-user-modals/build3`,
 };
 
 export const ERROR_CODES = {

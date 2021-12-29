@@ -1,7 +1,7 @@
 import React from "react";
 import "./walletConfig.css";
 
-import { Row, Col, Input, Button, Radio, Checkbox } from "antd";
+import { Input, Button, Checkbox } from "antd";
 
 function WalletConfig() {
   return (

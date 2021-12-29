@@ -1,7 +1,7 @@
 import React from "react";
 import "./viewTransaction.css";
 
-import { Button, Table } from "antd";
+import { Table } from "antd";
 import { useLocation } from "react-router-dom";
 
 const tableSource = [

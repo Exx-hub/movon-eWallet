@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./transactionSummary.css";
 import { DatePicker, Button, Table } from "antd";
 

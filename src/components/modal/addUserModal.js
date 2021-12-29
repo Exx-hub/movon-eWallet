@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Select, Input, Form } from "antd";
+import "./modal.css";
 
 const { Option } = Select;
 

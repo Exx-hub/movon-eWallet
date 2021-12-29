@@ -25,6 +25,14 @@
   margin-left: 10px;
 }
 
+.deac-btn {
+  border-radius: 7px;
+  margin-left: 10px;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+}
+
 .change-password-modal {
   /* text-align: center; */
   border-radius: 5px;
@@ -39,4 +47,12 @@
 .buttons-div {
   display: flex;
   justify-content: flex-end;
+}
+
+.disabled-input {
+  background-color: lightgray !important;
+}
+
+.disabled-input::placeholder {
+  color: #333;
 }

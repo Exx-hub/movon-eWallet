@@ -1,54 +1,9 @@
 import React, { useState } from "react";
 import "./userAdministration.css";
 
-import { Dropdown, Input, Table, Menu, Button } from "antd";
+import { Dropdown, Table, Menu, Button } from "antd";
 import { DownOutlined, PlusOutlined, EditOutlined } from "@ant-design/icons";
 import { AddUserModal, EditUserModal } from "../../components/modal";
-
-const tableSource = [
-  {
-    title: "First Name",
-    dataIndex: "firstName",
-    key: "firstName",
-    align: "center",
-  },
-  {
-    title: "Last Name",
-    dataIndex: "lastName",
-    key: "lastName",
-    align: "center",
-  },
-  {
-    title: "Username",
-    dataIndex: "username",
-    key: "seatNumber",
-    align: "center",
-  },
-  {
-    title: "Email",
-    dataIndex: "email",
-    key: "email",
-    align: "center",
-  },
-  {
-    title: "Merchant",
-    dataIndex: "merchant",
-    key: "merchant",
-    align: "center",
-  },
-  {
-    title: "Status",
-    dataIndex: "status",
-    key: "origin",
-    align: "center",
-  },
-  {
-    title: "Edit",
-    key: "edit",
-    align: "center",
-    render: (item) => <EditOutlined className="edit-icon" />,
-  },
-];
 
 // hardcoded for now but this should come from backend fetched data saved in component state
 const dataSource = [
@@ -94,6 +49,8 @@ function UserAdministration() {
   const [addNewUserModalVisible, setAddNewUserModalVisible] = useState(false);
   const [editUserModalVisible, setEditUserModalVisible] = useState(false);
 
+  const [itemToEdit, setItemToEdit] = useState(null);
+
   const menu = (
     <Menu>
       <Menu.Item key="1">5</Menu.Item>
@@ -103,6 +60,59 @@ function UserAdministration() {
   );
 
   const merchantList = ["DLTB Co.", "BITSI", "Victory Liner", "Ceres"];
+
+  const tableSource = [
+    {
+      title: "First Name",
+      dataIndex: "firstName",
+      key: "firstName",
+      align: "center",
+    },
+    {
+      title: "Last Name",
+      dataIndex: "lastName",
+      key: "lastName",
+      align: "center",
+    },
+    {
+      title: "Username",
+      dataIndex: "username",
+      key: "seatNumber",
+      align: "center",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+      key: "email",
+      align: "center",
+    },
+    {
+      title: "Merchant",
+      dataIndex: "merchant",
+      key: "merchant",
+      align: "center",
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      key: "origin",
+      align: "center",
+    },
+    {
+      title: "Edit",
+      key: "edit",
+      align: "center",
+      render: (item) => (
+        <EditOutlined
+          onClick={() => {
+            setEditUserModalVisible(true);
+            setItemToEdit(item);
+          }}
+          className="edit-icon"
+        />
+      ),
+    },
+  ];
   return (
     <>
       <div className="user-admin-container">
@@ -141,7 +151,13 @@ function UserAdministration() {
         handleCancel={() => setAddNewUserModalVisible(false)}
         handleOk={() => setAddNewUserModalVisible(false)}
       />
-      <EditUserModal visible={editUserModalVisible} />
+      <EditUserModal
+        visible={editUserModalVisible}
+        handleCancel={() => setEditUserModalVisible(false)}
+        handleOk={() => setEditUserModalVisible(false)}
+        handleDeac={() => setEditUserModalVisible(false)}
+        itemToEdit={itemToEdit}
+      />
     </>
   );
 }
