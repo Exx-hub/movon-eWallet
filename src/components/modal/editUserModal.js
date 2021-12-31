@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Input } from "antd";
 import "./modal.css";
+import {
+  deactivateUserSuccessPrompt,
+  updateUserSuccessPrompt,
+} from "../../utility";
 
 function EditUserModal(props) {
   console.log(props);
@@ -12,13 +16,13 @@ function EditUserModal(props) {
   });
 
   const deactivateUser = () => {
-    alert("user deactivated");
+    deactivateUserSuccessPrompt();
 
     props.handleDeac();
   };
 
   const handleOk = () => {
-    alert("submitted");
+    updateUserSuccessPrompt();
 
     console.log("newFirstName:", values.newFirstName);
     console.log("newLastName:", values.newLastName);

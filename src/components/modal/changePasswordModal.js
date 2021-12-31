@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Form, Input } from "antd";
 import "./modal.css";
+import { updatePasswordSuccess } from "../../utility";
 
 function ChangePasswordModal(props) {
   const [values, setValues] = useState({
@@ -10,7 +11,8 @@ function ChangePasswordModal(props) {
   });
 
   const handleOk = () => {
-    alert("changepassword confirmed");
+    updatePasswordSuccess();
+
     console.log("old password:", values.oldPassword);
     console.log("new password:", values.newPassword);
     console.log("confirm password:", values.confirmPass);

@@ -6,7 +6,11 @@ import { UserOutlined, LoadingOutlined } from "@ant-design/icons";
 import movonLogo from "../../assets/images/movonLogo.png";
 
 import { config } from "../../config";
-import { UserProfile } from "../../utility";
+import {
+  loginFailedPrompt,
+  loginSuccessPrompt,
+  UserProfile,
+} from "../../utility";
 import { useHistory } from "react-router-dom";
 
 function Login() {
@@ -41,12 +45,22 @@ function Login() {
       token: password,
     });
 
-    setTimeout(() => {
-      setIsLoading(false);
-      alert("Login successful");
+    // HARDCODED SIMULATION OF SUCCESS LOGIN AND FAILED LOGIN
+    if (username !== "alvin") {
+      setTimeout(() => {
+        setIsLoading(false);
+        loginFailedPrompt();
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+        loginSuccessPrompt();
 
-      history.push("/home");
-    }, 2000);
+        setTimeout(() => {
+          history.push("/home");
+        }, 1000);
+      }, 2000);
+    }
   };
 
   return (

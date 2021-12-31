@@ -2,8 +2,14 @@ import React from "react";
 import "./walletConfig.css";
 
 import { Input, Button, Checkbox } from "antd";
+import { walletThresholdSuccessPrompt } from "../../utility";
 
 function WalletConfig() {
+  const handleSave = () => {
+    walletThresholdSuccessPrompt();
+
+    // wallet config save to backend api
+  };
   return (
     <div className="wallet-config-container">
       <div className="wallet-config-body-container">
@@ -47,7 +53,7 @@ function WalletConfig() {
             </div>
 
             <div className="button-div">
-              <Button>Save</Button>
+              <Button onClick={handleSave}>Save</Button>
             </div>
           </div>
         </div>

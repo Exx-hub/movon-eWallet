@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button, Select, Input, Form } from "antd";
 import "./modal.css";
+import { addUserSuccessPrompt } from "../../utility";
 
 const { Option } = Select;
 
@@ -15,7 +16,7 @@ function AddUserModal(props) {
   });
 
   const handleOk = () => {
-    alert("submitted");
+    addUserSuccessPrompt();
 
     console.log("merchant:", values.merchant);
     console.log("firstName:", values.firstName);
