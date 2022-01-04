@@ -1,6 +1,6 @@
 import React from "react";
 import "./transactionSummary.css";
-import { DatePicker, Button, Table } from "antd";
+import { DatePicker, Button, Table, Pagination } from "antd";
 
 const { RangePicker } = DatePicker;
 
@@ -122,6 +122,8 @@ function TransactionSummary() {
             columns={tableSource}
             dataSource={dataSource}
           />
+
+          {/* <Pagination showSizeChanger={true} /> */}
         </div>
       </div>
     </div>

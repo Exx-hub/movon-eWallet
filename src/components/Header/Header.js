@@ -6,6 +6,7 @@ import {
   InfoCircleOutlined,
   PoweroffOutlined,
   LeftOutlined,
+  SafetyCertificateOutlined,
 } from "@ant-design/icons";
 import { useHistory } from "react-router";
 import movonLogo from "../../assets/images/movonLogo.png";
@@ -20,19 +21,19 @@ function _Header(props) {
 
   // --- DROPDOWN MENU DATA
   const MenuData = [
-    // {
-    //   key: "drop-down-user-profile",
-    //   name: "User Profile",
-    //   type: "menu",
-    //   icon: () => <UserOutlined />,
-    //   action: () => history.push("/profile"),
-    // },
     {
       key: "drop-down-change-password",
       name: "Change Password",
       type: "menu",
-      icon: () => <InfoCircleOutlined />,
+      icon: () => <SafetyCertificateOutlined />,
       action: () => props.setChangePassVisible(),
+    },
+    {
+      key: "drop-down-about",
+      name: "About",
+      type: "menu",
+      icon: () => <InfoCircleOutlined />,
+      action: () => history.push("/about"),
     },
     {
       key: "drop-down-logout",

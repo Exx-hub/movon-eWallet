@@ -12,6 +12,7 @@ import UserAdministration from "../userAdministration";
 import TransactionsList from "../transactionsList";
 import WalletConfig from "../walletConfig";
 import ViewTransaction from "../viewTransaction";
+import About from "../about";
 
 import { ChangePasswordModal, LogOutModal } from "../../components/modal";
 
@@ -39,6 +40,8 @@ function Home() {
       setHeaderTitle("User Administration");
     } else if (pathname === "/wallet-config") {
       setHeaderTitle("Wallet Configuration");
+    } else if (pathname === "/about") {
+      setHeaderTitle("About");
     } else {
       setHeaderTitle("");
     }
@@ -107,6 +110,10 @@ function Home() {
 
                 <Route path="/transactions/:id">
                   <ViewTransaction />
+                </Route>
+
+                <Route path="/about">
+                  <About />
                 </Route>
 
                 <Redirect from="/" to="/transaction-summary" />
