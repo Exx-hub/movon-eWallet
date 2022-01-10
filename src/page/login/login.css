@@ -93,3 +93,12 @@
 }
 
 /* #E8F0FE */
+
+/* MEDIA QUERIES  */
+
+@media screen and (max-width: 450px) {
+  .loginPage-formContainer {
+    width: 80%;
+    min-width: 300px;
+  }
+}

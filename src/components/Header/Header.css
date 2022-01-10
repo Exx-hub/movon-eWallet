@@ -45,3 +45,11 @@
 .ant-dropdown-menu {
   transform: translate(10px, -10px);
 }
+
+/* MEDIA QUERIES  */
+
+@media screen and (max-width: 1050px) {
+  .home-header-title {
+    font-size: 1.4rem;
+  }
+}

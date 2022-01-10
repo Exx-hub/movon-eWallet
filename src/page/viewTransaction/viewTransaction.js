@@ -101,28 +101,6 @@ const dataSource = [
     ticket: "Confirmed",
     key: 3,
   },
-  {
-    firstName: "Jona",
-    lastName: "Guzon",
-    seatNumber: "2",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
-    key: 4,
-  },
-  {
-    firstName: "Cathy",
-    lastName: "Roxas",
-    seatNumber: "34",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
-    key: 5,
-  },
 ];
 
 function ViewTransaction() {
