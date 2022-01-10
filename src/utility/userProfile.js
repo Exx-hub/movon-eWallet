@@ -47,6 +47,18 @@ class UserProfileClass {
     return this.user;
   }
 
+  getName() {
+    if (this.user) {
+      return this.user.name;
+    }
+  }
+
+  getRole = () => {
+    if (this.user) {
+      return this.user.role;
+    }
+  };
+
   getUserId = () => {
     if (this.user) {
       return this.user.displayId || undefined;

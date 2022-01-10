@@ -7,7 +7,7 @@ import {
 } from "../../utility";
 
 function EditUserModal(props) {
-  console.log(props);
+  // console.log(props);
 
   const [values, setValues] = useState({
     newFirstName: "",

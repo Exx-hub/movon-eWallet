@@ -4,6 +4,7 @@ import "./userAdministration.css";
 import { Dropdown, Table, Menu, Button } from "antd";
 import { DownOutlined, PlusOutlined, EditOutlined } from "@ant-design/icons";
 import { AddUserModal, EditUserModal } from "../../components/modal";
+import { UserProfile } from "../../utility";
 
 // hardcoded for now but this should come from backend fetched data saved in component state
 const dataSource = [
@@ -126,9 +127,13 @@ function UserAdministration() {
               5 <DownOutlined />
             </Button>
           </Dropdown>
-          <Button onClick={() => setAddNewUserModalVisible(true)}>
-            <PlusOutlined /> Add New User
-          </Button>
+
+          {/* TESTING ROLE FUNCTIONALITY - hide for staff role  */}
+          {UserProfile.getRole() === 2 && (
+            <Button onClick={() => setAddNewUserModalVisible(true)}>
+              <PlusOutlined /> Add New User
+            </Button>
+          )}
         </div>
 
         <div className="user-admin-table-container">

@@ -19,6 +19,8 @@ function _Header(props) {
 
   // console.log(props);
 
+  // console.log(UserProfile.getRole());
+
   // --- DROPDOWN MENU DATA
   const MenuData = [
     {
@@ -87,7 +89,7 @@ function _Header(props) {
 
         <Dropdown overlay={menu} trigger={["click"]}>
           <span className="home-header-dropdown-span">
-            Welcome, {UserProfile.getUser()}!
+            Welcome, {UserProfile.getName()}!
             <DownOutlined style={{ fontSize: "10px", marginLeft: 5 }} />
           </span>
         </Dropdown>

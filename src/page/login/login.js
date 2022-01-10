@@ -39,26 +39,27 @@ function Login() {
 
     console.log(username, password);
 
-    // hardcoded setting of creds in localstorage w/out api
-    UserProfile.setCredential({
-      user: username,
-      token: password,
-    });
-
     // HARDCODED SIMULATION OF SUCCESS LOGIN AND FAILED LOGIN
-    if (username !== "alvin") {
+    if (username === "alvin" || username === "alvinAdmin") {
       setTimeout(() => {
         setIsLoading(false);
-        loginFailedPrompt();
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        setIsLoading(false);
+
         loginSuccessPrompt();
+
+        // hardcoded setting of creds in localstorage w/out api
+        UserProfile.setCredential({
+          user: { name: username, role: username === "alvinAdmin" ? 2 : 1 },
+          token: password,
+        });
 
         setTimeout(() => {
           history.push("/home");
         }, 1000);
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        setIsLoading(false);
+        loginFailedPrompt();
       }, 2000);
     }
   };
