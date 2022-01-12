@@ -13,8 +13,10 @@ import TransactionsList from "../transactionsList";
 import WalletConfig from "../walletConfig";
 import ViewTransaction from "../viewTransaction";
 import About from "../about";
+import WalletTopup from "../walletTopup";
 
 import { ChangePasswordModal, LogOutModal } from "../../components/modal";
+import { UserProfile } from "../../utility";
 
 const { Content, Sider } = Layout;
 
@@ -42,6 +44,8 @@ function Home() {
       setHeaderTitle("Wallet Configuration");
     } else if (pathname === "/about") {
       setHeaderTitle("About");
+    } else if (pathname === "/topup") {
+      setHeaderTitle("Wallet Top-up");
     } else {
       setHeaderTitle("");
     }
@@ -85,6 +89,24 @@ function Home() {
               >
                 Wallet Configuration
               </Menu.Item>
+
+              <Menu.Item
+                key={"/topup"}
+                onClick={() => history.push("/topup")}
+                style={{ margin: 0, height: 50 }}
+              >
+                Wallet Top-up
+              </Menu.Item>
+
+              {/* {UserProfile.getRole() === 2 && (
+                <Menu.Item
+                  key={"/topup"}
+                  onClick={() => history.push("/topup")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  Wallet Top-up
+                </Menu.Item>
+              )} */}
             </Menu>
           </Sider>
 
@@ -114,6 +136,10 @@ function Home() {
 
                 <Route path="/about">
                   <About />
+                </Route>
+
+                <Route path="/topup">
+                  <WalletTopup />
                 </Route>
 
                 <Redirect from="/" to="/transaction-summary" />
