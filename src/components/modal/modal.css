@@ -1,4 +1,4 @@
-.logout-modal {
+.modal {
   text-align: center;
   border-radius: 5px;
   padding: 0;
@@ -55,4 +55,9 @@
 
 .disabled-input::placeholder {
   color: #333;
+}
+
+.topup-buttons-div {
+  display: flex;
+  justify-content: center;
 }

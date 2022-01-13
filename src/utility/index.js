@@ -84,6 +84,16 @@ const errorNotification = () => {
   notification.error(args);
 };
 
+const topupSuccess = () => {
+  const args = {
+    message: "SUCCESS",
+    description: "Wallet Balance Top-up Success",
+    duration: 2,
+  };
+
+  notification.success(args);
+};
+
 export {
   UserProfile,
   loginSuccessPrompt,
@@ -94,4 +104,5 @@ export {
   deactivateUserSuccessPrompt,
   updatePasswordSuccess,
   errorNotification,
+  topupSuccess,
 };

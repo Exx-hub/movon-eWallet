@@ -11,7 +11,7 @@ function LogOutModal(props) {
   return (
     <Modal
       visible={props.visible}
-      className="logout-modal"
+      className="modal"
       onCancel={props.handleCancel}
       footer={[
         <Button
