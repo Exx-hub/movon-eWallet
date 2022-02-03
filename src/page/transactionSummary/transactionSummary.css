@@ -1,0 +1,70 @@
+.transaction-summary-container {
+  padding: 20px;
+}
+
+.user-details-container {
+  padding: 20px;
+}
+
+.title {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: 200;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.value {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: bold;
+}
+
+.dashed-line {
+  width: 100%;
+  border-bottom: dashed rgba(125, 125, 125, 0.5) 1px;
+
+  margin-top: 10px;
+}
+
+.transaction-table-container {
+}
+
+.table-top-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.summary-title {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.datepicker-div {
+}
+
+.filter-button {
+  margin-left: 40px;
+}
+
+.transaction-table-container th {
+  background-color: rgba(46, 49, 49, 0.5) !important;
+  color: white !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+/* MEDIA QUERIES  */
+
+@media screen and (max-width: 1050px) {
+  .datepicker-div {
+    /* width: %; */
+  }
+  .summary-title {
+    font-size: 16px;
+  }
+}

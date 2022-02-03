@@ -1,0 +1,24 @@
+.transactionList-container {
+  padding: 25px;
+}
+
+.top-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.search-input {
+  border-radius: 10px !important;
+  font-size: 28px;
+  width: 400px;
+}
+
+.table-container th {
+  background-color: rgba(46, 49, 49, 0.15) !important;
+  color: #333 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}

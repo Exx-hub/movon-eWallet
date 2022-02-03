@@ -1,0 +1,61 @@
+.wallet-config-container {
+  /* height: 93vh; */
+}
+
+.wallet-config-body-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 60%;
+  min-width: 800px;
+
+  margin: 0 auto;
+  margin-top: 100px;
+
+  background-color: white;
+
+  padding: 50px;
+
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.wallet-config-body {
+  display: flex;
+}
+
+.div {
+  margin: 0 50px;
+  text-align: center;
+}
+
+.title-div {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.checkbox-div {
+  height: 35px;
+  margin-top: 30px;
+  min-width: 80px;
+}
+
+.checkbox-span {
+  transform: translateX(10);
+}
+
+.input-div {
+  height: 32px;
+  margin-top: 30px;
+}
+
+.button-div {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.button-div button {
+  border: 1px solid gray;
+}

@@ -1,0 +1,65 @@
+.home-header {
+  display: flex;
+  background-color: white;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  height: 7vh;
+  z-index: 99;
+}
+
+.home-header-logo {
+  background-color: #008176;
+  width: 12%;
+  min-width: 210px;
+  color: white;
+  text-align: center;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 76px;
+  transform: translateY(-4px);
+}
+
+.home-header-right {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+.home-header-title {
+  font-size: 1.6rem;
+}
+
+.balance-dropdown-div {
+  display: flex;
+  align-items: center;
+}
+
+.global-wallet-balance {
+  margin-right: 10px;
+  color: gray;
+}
+
+.home-header-dropdown-span {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* font-size: 16px; */
+  font-weight: bold;
+}
+
+.ant-dropdown-menu {
+  transform: translate(10px, -10px);
+}
+
+/* MEDIA QUERIES  */
+
+@media screen and (max-width: 1050px) {
+  .home-header-title {
+    font-size: 1.4rem;
+  }
+}

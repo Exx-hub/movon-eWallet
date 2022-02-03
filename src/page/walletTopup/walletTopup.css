@@ -1,0 +1,64 @@
+.walletTopup-container {
+  padding: 20px;
+}
+
+.details-container {
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-details-key {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: 200;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.wallet-details-value {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: bold;
+}
+
+.topup-button {
+  background-color: #008176;
+  color: white;
+}
+
+.dashed {
+  width: 100%;
+  border-bottom: dashed rgba(125, 125, 125, 0.5) 1px;
+
+  margin-top: 10px;
+}
+
+.table-upper-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.table-title {
+  color: rgba(0, 0, 0, 0.719);
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.topup-search {
+  border-radius: 10px !important;
+  font-size: 28px;
+  width: 400px;
+}
+
+.transaction-history-container th {
+  background-color: rgba(46, 49, 49, 0.5) !important;
+  color: white !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
