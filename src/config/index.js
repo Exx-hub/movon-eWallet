@@ -6,10 +6,10 @@ export const config = {
   },
   version: {
     environment: "",
-    build: "1.0.0(5)",
+    build: "1.0.0(6)",
   },
   environment: "",
-  changeLogs: `page/wallet-topup-module/build5`,
+  changeLogs: `feature/global-wallet-balance/build6`,
 };
 
 export const ERROR_CODES = {

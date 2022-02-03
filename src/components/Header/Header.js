@@ -87,12 +87,16 @@ function _Header(props) {
           </div>
         )}
 
-        <Dropdown overlay={menu} trigger={["click"]}>
-          <span className="home-header-dropdown-span">
-            Welcome, {UserProfile.getName()}!
-            <DownOutlined style={{ fontSize: "10px", marginLeft: 5 }} />
-          </span>
-        </Dropdown>
+        <div className="balance-dropdown-div">
+          <div className="global-wallet-balance">Wallet Balance: ₱0.00</div>
+
+          <Dropdown overlay={menu} trigger={["click"]}>
+            <span className="home-header-dropdown-span">
+              Welcome, {UserProfile.getName()}!
+              <DownOutlined style={{ fontSize: "10px", marginLeft: 5 }} />
+            </span>
+          </Dropdown>
+        </div>
       </div>
     </Header>
   );

@@ -17,6 +17,7 @@ import WalletTopup from "../walletTopup";
 
 import { ChangePasswordModal, LogOutModal } from "../../components/modal";
 import { UserProfile } from "../../utility";
+import { config } from "../../config";
 
 const { Content, Sider } = Layout;
 
@@ -60,45 +61,46 @@ function Home() {
         />
         <Layout className="home-body">
           <Sider width={210} className="home-sider">
-            <Menu theme="dark" mode="inline" selectedKeys={[pathname]}>
-              <Menu.Item
-                key={"/transaction-summary"}
-                onClick={() => history.push("/")}
-                style={{ margin: 0, height: 50 }}
-              >
-                Transaction Summary
-              </Menu.Item>
-              <Menu.Item
-                key={"/transactions"}
-                onClick={() => history.push("/transactions")}
-                style={{ margin: 0, height: 50 }}
-              >
-                Transactions
-              </Menu.Item>
-              <Menu.Item
-                key={"/user-admin"}
-                onClick={() => history.push("/user-admin")}
-                style={{ margin: 0, height: 50 }}
-              >
-                User Administration
-              </Menu.Item>
-              <Menu.Item
-                key={"/wallet-config"}
-                onClick={() => history.push("/wallet-config")}
-                style={{ margin: 0, height: 50 }}
-              >
-                Wallet Configuration
-              </Menu.Item>
+            <div className="sider-container">
+              <Menu theme="dark" mode="inline" selectedKeys={[pathname]}>
+                <Menu.Item
+                  key={"/transaction-summary"}
+                  onClick={() => history.push("/")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  Transaction Summary
+                </Menu.Item>
+                <Menu.Item
+                  key={"/transactions"}
+                  onClick={() => history.push("/transactions")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  Transactions
+                </Menu.Item>
+                <Menu.Item
+                  key={"/user-admin"}
+                  onClick={() => history.push("/user-admin")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  User Administration
+                </Menu.Item>
+                <Menu.Item
+                  key={"/wallet-config"}
+                  onClick={() => history.push("/wallet-config")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  Wallet Configuration
+                </Menu.Item>
 
-              <Menu.Item
-                key={"/topup"}
-                onClick={() => history.push("/topup")}
-                style={{ margin: 0, height: 50 }}
-              >
-                Wallet Top-up
-              </Menu.Item>
+                <Menu.Item
+                  key={"/topup"}
+                  onClick={() => history.push("/topup")}
+                  style={{ margin: 0, height: 50 }}
+                >
+                  Wallet Top-up
+                </Menu.Item>
 
-              {/* {UserProfile.getRole() === 2 && (
+                {/* {UserProfile.getRole() === 2 && (
                 <Menu.Item
                   key={"/topup"}
                   onClick={() => history.push("/topup")}
@@ -107,7 +109,10 @@ function Home() {
                   Wallet Top-up
                 </Menu.Item>
               )} */}
-            </Menu>
+              </Menu>
+
+              <div className="sider-version">build {config.version.build}</div>
+            </div>
           </Sider>
 
           {/* NESTED ROUTES - HOME CONTENT BODY  */}

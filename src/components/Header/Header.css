@@ -34,6 +34,16 @@
   font-size: 1.6rem;
 }
 
+.balance-dropdown-div {
+  display: flex;
+  align-items: center;
+}
+
+.global-wallet-balance {
+  margin-right: 10px;
+  color: gray;
+}
+
 .home-header-dropdown-span {
   display: flex;
   align-items: center;

@@ -72,6 +72,10 @@ class UserProfileClass {
     }
     return undefined;
   };
+
+  getBalance = () => {
+    return;
+  };
 }
 
 export default UserProfileClass;
