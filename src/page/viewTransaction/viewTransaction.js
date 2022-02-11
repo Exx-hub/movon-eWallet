@@ -6,51 +6,63 @@ import { useLocation } from "react-router-dom";
 
 const tableSource = [
   {
-    title: "First Name",
-    dataIndex: "firstName",
-    key: "firstName",
+    title: "Ticket ID",
+    dataIndex: "ticketId",
+    key: "ticketId",
     align: "center",
   },
   {
-    title: "Last Name",
-    dataIndex: "lastName",
-    key: "lastName",
+    title: "Passenger Name",
+    dataIndex: "passengerName",
+    key: "passengerName",
     align: "center",
   },
   {
-    title: "Seat No.",
+    title: "Mobile Number",
+    dataIndex: "mobileNumber",
+    key: "mobileNumber",
+    align: "center",
+  },
+  {
+    title: "Email",
+    dataIndex: "email",
+    key: "email",
+    align: "center",
+  },
+  {
+    title: "Start Station",
+    dataIndex: "start",
+    key: "start",
+    align: "center",
+  },
+  {
+    title: "End Station",
+    dataIndex: "end",
+    key: "end",
+    align: "center",
+  },
+  {
+    title: "Charged Amount",
+    dataIndex: "chargedAmount",
+    key: "chargedAmount",
+    align: "center",
+  },
+  {
+    title: "Passenger/s",
+    dataIndex: "passengers",
+    key: "passengers",
+    align: "center",
+  },
+  {
+    title: "Seat Number",
     dataIndex: "seatNumber",
     key: "seatNumber",
     align: "center",
   },
   {
-    title: "Trip ID",
-    dataIndex: "tripId",
-    key: "tripId",
-    align: "center",
-  },
-  {
-    title: "Trip Date",
-    dataIndex: "tripDate",
-    key: "tripDate",
-    align: "center",
-  },
-  {
-    title: "Origin",
-    dataIndex: "origin",
-    key: "origin",
-    align: "center",
-  },
-  {
-    title: "Destination",
-    dataIndex: "destination",
-    key: "destination",
-    align: "center",
-  },
-  {
-    title: "Ticket",
-    dataIndex: "ticket",
-    key: "ticket",
+    title: "Ticket Status",
+    dataIndex: "ticketStatus",
+    key: "ticketStatus",
     align: "center",
   },
 ];
@@ -58,47 +70,55 @@ const tableSource = [
 // hardcoded for now but this should come from backend fetched data saved in component state
 const dataSource = [
   {
-    firstName: "Alvin",
-    lastName: "Acosta",
-    seatNumber: "11",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
+    ticketId: "TGYBFDR",
+    passengerName: "Alvin Acosta",
+    mobileNumber: "09164209977",
+    email: "Alvinfloresacosta@gmail.com",
+    start: "Cubao",
+    end: "Baguio",
+    chargedAmount: "757.00",
+    passengers: "ALVIN ACOSTA",
+    seatNumber: 1,
+    ticketStatus: "Pending",
     key: 0,
   },
   {
-    firstName: "Alvin",
-    lastName: "Buid",
-    seatNumber: "5",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
+    ticketId: "TGYBFDR",
+    passengerName: "Alvin Acosta",
+    mobileNumber: "09164209977",
+    email: "Alvinfloresacosta@gmail.com",
+    start: "Cubao",
+    end: "Baguio",
+    chargedAmount: "757.00",
+    passengers: "ALVIN ACOSTA",
+    seatNumber: 1,
+    ticketStatus: "Pending",
     key: 1,
   },
   {
-    firstName: "Juan",
-    lastName: "Dela Cruz",
-    seatNumber: "34",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
+    ticketId: "TGYBFDR",
+    passengerName: "Alvin Acosta",
+    mobileNumber: "09164209977",
+    email: "Alvinfloresacosta@gmail.com",
+    start: "Cubao",
+    end: "Baguio",
+    chargedAmount: "757.00",
+    passengers: "ALVIN ACOSTA",
+    seatNumber: 1,
+    ticketStatus: "Pending",
     key: 2,
   },
   {
-    firstName: "Mikee",
-    lastName: "G",
-    seatNumber: "27",
-    tripId: "TPnswTeQt",
-    tripDate: "December 24, 2021",
-    origin: "Cubao",
-    destination: "Baguio",
-    ticket: "Confirmed",
+    ticketId: "TGYBFDR",
+    passengerName: "Alvin Acosta",
+    mobileNumber: "09164209977",
+    email: "Alvinfloresacosta@gmail.com",
+    start: "Cubao",
+    end: "Baguio",
+    chargedAmount: "757.00",
+    passengers: "ALVIN ACOSTA",
+    seatNumber: 1,
+    ticketStatus: "Pending",
     key: 3,
   },
 ];
@@ -108,33 +128,19 @@ function ViewTransaction() {
 
   console.log(location.state);
 
-  const { referenceId, ticketId, ticketPrice, status, transactionDate } =
-    location.state.item;
+  const { tripId, tripSchedule } = location.state.item;
 
   return (
     <div className="viewTransaction-container">
       <div className="transaction-details-container">
         <div className="container-title">Transaction Details</div>
-
         <div>
-          <span className="details-key">Reference ID: </span>
-          <span className="details-value">{referenceId}</span>
+          <span className="details-key">Trip ID: </span>
+          <span className="details-value">{tripId}</span>
         </div>
         <div>
-          <span className="details-key">Ticket ID: </span>
-          <span className="details-value">{ticketId}</span>
-        </div>
-        <div>
-          <span className="details-key">Ticket Price: </span>
-          <span className="details-value">₱{ticketPrice}</span>
-        </div>
-        <div>
-          <span className="details-key">Status: </span>
-          <span className="details-value">{status}</span>
-        </div>
-        <div>
-          <span className="details-key">Transaction Date: </span>
-          <span className="details-value">{transactionDate}</span>
+          <span className="details-key">Trip Schedule </span>
+          <span className="details-value">{tripSchedule}</span>
         </div>
       </div>
 
