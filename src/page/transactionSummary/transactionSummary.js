@@ -1,6 +1,6 @@
 import React from "react";
 import "./transactionSummary.css";
-import { DatePicker, Button, Table, Pagination } from "antd";
+import { DatePicker, Button, Table, Pagination, Input } from "antd";
 
 const { RangePicker } = DatePicker;
 
@@ -9,6 +9,12 @@ const tableSource = [
     title: "Transaction Id",
     dataIndex: "transId",
     key: "transId",
+    align: "center",
+  },
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
     align: "center",
   },
   {
@@ -41,6 +47,7 @@ const tableSource = [
 const dataSource = [
   {
     transId: "MOV12345",
+    name: "Alvin Acosta",
     transType: "Ticket Purchase",
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
@@ -49,6 +56,7 @@ const dataSource = [
   },
   {
     transId: "MOV12346",
+    name: "Alvin Buid",
     transType: "Ticket Purchase",
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
@@ -57,6 +65,7 @@ const dataSource = [
   },
   {
     transId: "MOV12346",
+    name: "Mikee Gemilo",
     transType: "Ticket Purchase",
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
@@ -65,6 +74,7 @@ const dataSource = [
   },
   {
     transId: "MOV12346",
+    name: "Jona Guzon",
     transType: "Ticket Purchase",
     ticketId: "T-13hiuefgfdg",
     referenceId: "BC12345",
@@ -107,6 +117,10 @@ function TransactionSummary() {
         <div className="table-top-div">
           <div className="summary-title">Transaction Summary</div>
           <div className="datepicker-div">
+            <Input
+              placeholder="Ticket ID"
+              style={{ marginRight: 20, width: 200 }}
+            />
             <RangePicker />
             <Button className="filter-button">Filter</Button>
           </div>

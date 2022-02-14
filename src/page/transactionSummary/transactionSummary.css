@@ -45,10 +45,11 @@
 }
 
 .datepicker-div {
+  display: flex;
 }
 
 .filter-button {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .transaction-table-container th {

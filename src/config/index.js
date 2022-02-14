@@ -9,7 +9,7 @@ export const config = {
     build: "1.0.0(6)",
   },
   environment: "",
-  changeLogs: `feature/global-wallet-balance/build6`,
+  changeLogs: `update/apply-changes/build6`,
 };
 
 export const ERROR_CODES = {
