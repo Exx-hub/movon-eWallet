@@ -28,6 +28,12 @@ function TransactionsList() {
 
   const tableSource = [
     {
+      title: "RS No.",
+      dataIndex: "rsNumber",
+      key: "rsNumber",
+      align: "center",
+    },
+    {
       title: "Trip ID",
       dataIndex: "tripId",
       key: "tripId",
@@ -56,12 +62,14 @@ function TransactionsList() {
       dataIndex: "ticketsSold",
       key: "ticketsSold",
       align: "center",
+      width: 150,
     },
     {
       title: "No of Seats",
       dataIndex: "numberOfSeats",
       key: "numberOfSeats",
       align: "center",
+      width: 100,
     },
     {
       title: "Total Convenience Fee",
@@ -97,6 +105,7 @@ function TransactionsList() {
   // hardcoded for now but this should come from backend fetched data saved in component state
   const dataSource = [
     {
+      rsNumber: 1234567,
       tripId: "TPNFWMSSJFF",
       tripSchedule: "01/18/2022 08:30 PM",
       busCompany: "DLTBCo.",
@@ -109,6 +118,7 @@ function TransactionsList() {
       _id: 1,
     },
     {
+      rsNumber: 1234567,
       tripId: "TPNFWMSSJFF",
       tripSchedule: "01/18/2022 08:30 PM",
       busCompany: "DLTBCo.",
@@ -121,6 +131,7 @@ function TransactionsList() {
       _id: 2,
     },
     {
+      rsNumber: 1234567,
       tripId: "TPNFWMSSJFF",
       tripSchedule: "01/18/2022 08:30 PM",
       busCompany: "DLTBCo.",
@@ -133,6 +144,7 @@ function TransactionsList() {
       _id: 3,
     },
     {
+      rsNumber: 1234567,
       tripId: "TPNFWMSSJFF",
       tripSchedule: "01/18/2022 08:30 PM",
       busCompany: "DLTBCo.",
@@ -145,6 +157,7 @@ function TransactionsList() {
       _id: 4,
     },
     {
+      rsNumber: 1234567,
       tripId: "TPNFWMSSJFF",
       tripSchedule: "01/18/2022 08:30 PM",
       busCompany: "DLTBCo.",
