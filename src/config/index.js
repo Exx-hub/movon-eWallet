@@ -9,7 +9,7 @@ export const config = {
     build: "1.0.0(6)",
   },
   environment: "",
-  changeLogs: `update/add-rsNumber-column/build6`,
+  changeLogs: `api/loginApi/build6`,
 };
 
 export const ERROR_CODES = {

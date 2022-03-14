@@ -12,6 +12,7 @@ import {
   UserProfile,
 } from "../../utility";
 import { useHistory } from "react-router-dom";
+import User from "../../service/User";
 
 function Login() {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,34 +35,28 @@ function Login() {
   const onFinish = () => {
     setIsLoading(true);
 
-    // login api here!!!
-    // add alerts/notifications
-
     console.log(username, password);
 
-    // HARDCODED SIMULATION OF SUCCESS LOGIN AND FAILED LOGIN
-    if (username === "alvin" || username === "alvinAdmin") {
-      setTimeout(() => {
+    User.login(username, password)
+      .then((e) => {
+        const { data, success, errorCode } = e.data;
+        console.log("FRESH FROM LOGIN FETCH:", e.data);
         setIsLoading(false);
 
-        loginSuccessPrompt();
+        if (errorCode) {
+          loginFailedPrompt();
+        }
 
-        // hardcoded setting of creds in localstorage w/out api
-        UserProfile.setCredential({
-          user: { name: username, role: username === "alvinAdmin" ? 2 : 1 },
-          token: password,
-        });
-
-        setTimeout(() => {
-          history.push("/home");
-        }, 1000);
-      }, 2000);
-    } else {
-      setTimeout(() => {
+        if (success) {
+          UserProfile.setCredential({ user: data.user, token: data.token });
+          loginSuccessPrompt();
+          history.push("/");
+        }
+      })
+      .catch((err) => {
         setIsLoading(false);
-        loginFailedPrompt();
-      }, 2000);
-    }
+        console.log(err);
+      });
   };
 
   return (
